@@ -5,3 +5,11 @@ prostages_accueil:
 prostages_entreprise:
     path: /entreprise
     controller: App\Controller\ProstagesController::entreprise
+
+prostages_formations:
+    path: /formations
+    controller: App\Controller\ProstagesController::formations
+
+prostages_stage:
+    path: /stage/{id}
+    controller: App\Controller\ProstagesController::stage

@@ -21,4 +21,18 @@ class ProstagesController extends AbstractController
             'controller_name' => 'ProstagesController',
         ]);
     }
+
+    public function formations(): Response
+    {
+        return $this->render('prostages/formations.html.twig', [
+            'controller_name' => 'ProstagesController',
+        ]);
+    }
+    
+    public function stage($id): Response
+    {
+        return $this->render('prostages/stage.html.twig', [
+            'controller_name' => $id,
+        ]);
+    }
 }
