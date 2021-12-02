@@ -8,12 +8,16 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class ProstagesController extends AbstractController
 {
-    /**
-     * @Route("/", name="prostages_acceuil")
-     */
     public function index(): Response
     {
         return $this->render('prostages/index.html.twig', [
+            'controller_name' => 'ProstagesController',
+        ]);
+    }
+
+    public function entreprise(): Response
+    {
+        return $this->render('prostages/entreprise.html.twig', [
             'controller_name' => 'ProstagesController',
         ]);
     }
