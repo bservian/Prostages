@@ -1,7 +1,7 @@
-prostages_acceuil:
+prostages_accueil:
     path: /
-   controller: App\Controller\ProstagesController ::index
+    controller: App\Controller\ProstagesController::index
 
-prostages_acceuil:
+prostages_entreprise:
     path: /entreprise
-   controller: App\Controller\ProstagesController ::entreprise
+    controller: App\Controller\ProstagesController::entreprise
