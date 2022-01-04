@@ -12,22 +12,64 @@
     </head>
         
     <body>
-        {% block slider %}
-        <h1>-----------------SLIDER-----------------</h1>
+        <div class="container-fluid">
+
+        {% block tete %}
+           <div class="row">
+                <div class="col-md-12">
+                <h1>-----------------TETE-----------------</h1>
+                </div>
+            </div>
+        
         {% endblock %}
 
-        {% block menu %}
-        <h1>-----------------MENU-----------------<i class="icon-user"></i>  </h1>
+        {% block navigation %}
+        <h1>-----------------NAVIGATION-----------------<i class="icon-user"></i>  </h1>
+        <!-- NAVBAR -->
+        <div class="row">
+            <div class="col-md-12">
+                <ul class="nav nav-tabs">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#">filtre</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">aucun</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ 'C:/Temp/symfony/prostages/templates/prostages/entreprise.html.twig'}}">par entreprise</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link disabled" href="#">par formation</a>
+                    </li>
+
+                </ul>
+            </div>
+	    </div>
         {% endblock %}
 
-        {% block contenu %}{% endblock %}
+        {% block contenu %}
+        <!-- 4 colonnes 1 ligne -->
+        <div class="row">
+        <div class="col-md-3">
+        </div>
+        <div class="col-md-3">
+        </div>
+        <div class="col-md-3">
+        </div>
+        <div class="col-md-3">
+        </div>
+    </div>
+        {% endblock %}
         {% block footer %}
         <h1>-----------------FOOTER-----------------</h1>
+        </div>
+        <div class="col-md-12">
+        </div>
         {% endblock %}
         {% block javascripts %}
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
         {% endblock %}
      
-
+         </div>
     </body>
 </html>
