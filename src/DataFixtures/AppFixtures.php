@@ -114,7 +114,148 @@ class AppFixtures extends Fixture
         }
 
         //---------STAGES-----------------//
-        $nbStagesAGenerer = $faker->numberBetween($min = 0, $max = 3);
+        ///Stage 1
+        $stage = new Stage();
+        $i = 0;
+        $stage->setTitre($faker->numerify('Stage ###')); //$faker->jobTitle() ne marche pas
+        $stage->setMission($faker->realText($maxNbChars = 5000, $indexSize = 2));
+        $stage->setEmail($faker->companyEmail());
+        // Creation de la relation Stage -> Formation
+        $stage->addFormation($f1);
+        //creation de la relation Stage --> Entreprise
+        $stage->setEntreprise($e1);
+    
+        //Persister les objets modifiés
+        $manager->persist($stage);
+        $manager->persist($e1);
+
+        ///Stage 2
+        $stage = new Stage();
+        $stage->setTitre($faker->numerify('Stage ###')); //$faker->jobTitle() ne marche pas
+        $stage->setMission($faker->realText($maxNbChars = 5000, $indexSize = 2));
+        $stage->setEmail($faker->companyEmail());
+        // Creation de la relation Stage -> Formation
+        $stage->addFormation($f1);
+        //creation de la relation Stage --> Entreprise
+        $stage->setEntreprise($e2);
+    
+        //Persister les objets modifiés
+        $manager->persist($stage);
+        $manager->persist($e2);
+
+        ///Stage 3
+        $stage = new Stage();
+        $stage->setTitre($faker->numerify('Stage ###')); //$faker->jobTitle() ne marche pas
+        $stage->setMission($faker->realText($maxNbChars = 5000, $indexSize = 2));
+        $stage->setEmail($faker->companyEmail());
+        // Creation de la relation Stage -> Formation
+        $stage->addFormation($f2);
+        //creation de la relation Stage --> Entreprise
+        $stage->setEntreprise($e3);
+    
+        //Persister les objets modifiés
+        $manager->persist($stage);
+        $manager->persist($e3);
+
+        ///Stage 4
+        $stage = new Stage();
+        $stage->setTitre($faker->numerify('Stage ###')); //$faker->jobTitle() ne marche pas
+        $stage->setMission($faker->realText($maxNbChars = 5000, $indexSize = 2));
+        $stage->setEmail($faker->companyEmail());
+        // Creation de la relation Stage -> Formation
+        $stage->addFormation($f2);
+        //creation de la relation Stage --> Entreprise
+        $stage->setEntreprise($e4);
+    
+        //Persister les objets modifiés
+        $manager->persist($stage);
+        $manager->persist($e4);
+
+        ///Stage 5
+        $stage = new Stage();
+        $stage->setTitre($faker->numerify('Stage ###')); //$faker->jobTitle() ne marche pas
+        $stage->setMission($faker->realText($maxNbChars = 5000, $indexSize = 2));
+        $stage->setEmail($faker->companyEmail());
+        // Creation de la relation Stage -> Formation
+        $stage->addFormation($f2);
+        //creation de la relation Stage --> Entreprise
+        $stage->setEntreprise($e8);
+    
+        //Persister les objets modifiés
+        $manager->persist($stage);
+        $manager->persist($e8);
+
+        ///Stage 6
+        $stage = new Stage();
+        $stage->setTitre($faker->numerify('Stage ###')); //$faker->jobTitle() ne marche pas
+        $stage->setMission($faker->realText($maxNbChars = 5000, $indexSize = 2));
+        $stage->setEmail($faker->companyEmail());
+        // Creation de la relation Stage -> Formation
+        $stage->addFormation($f3);
+        //creation de la relation Stage --> Entreprise
+        $stage->setEntreprise($e5);
+    
+        //Persister les objets modifiés
+        $manager->persist($stage);
+        $manager->persist($e5);
+
+        ///Stage 7
+        $stage = new Stage();
+        $stage->setTitre($faker->numerify('Stage ###')); //$faker->jobTitle() ne marche pas
+        $stage->setMission($faker->realText($maxNbChars = 5000, $indexSize = 2));
+        $stage->setEmail($faker->companyEmail());
+        // Creation de la relation Stage -> Formation
+        $stage->addFormation($f4);
+        //creation de la relation Stage --> Entreprise
+        $stage->setEntreprise($e6);
+    
+        //Persister les objets modifiés
+        $manager->persist($stage);
+        $manager->persist($e6);
+
+        ///Stage 8
+        $stage = new Stage();
+        $stage->setTitre($faker->numerify('Stage ###')); //$faker->jobTitle() ne marche pas
+        $stage->setMission($faker->realText($maxNbChars = 5000, $indexSize = 2));
+        $stage->setEmail($faker->companyEmail());
+        // Creation de la relation Stage -> Formation
+        $stage->addFormation($f4);
+        //creation de la relation Stage --> Entreprise
+        $stage->setEntreprise($e1);
+    
+        //Persister les objets modifiés
+        $manager->persist($stage);
+        $manager->persist($e1);
+
+        ///Stage 9
+        $stage = new Stage();
+        $stage->setTitre($faker->numerify('Stage ###')); //$faker->jobTitle() ne marche pas
+        $stage->setMission($faker->realText($maxNbChars = 5000, $indexSize = 2));
+        $stage->setEmail($faker->companyEmail());
+        // Creation de la relation Stage -> Formation
+        $stage->addFormation($f5);
+        //creation de la relation Stage --> Entreprise
+        $stage->setEntreprise($e7);
+    
+        //Persister les objets modifiés
+        $manager->persist($stage);
+        $manager->persist($e7);
+   
+        ///Stage 9
+        $stage = new Stage();
+        $stage->setTitre($faker->numerify('Stage ###')); //$faker->jobTitle() ne marche pas
+        $stage->setMission($faker->realText($maxNbChars = 5000, $indexSize = 2));
+        $stage->setEmail($faker->companyEmail());
+        // Creation de la relation Stage -> Formation
+        $stage->addFormation($f5);
+        //creation de la relation Stage --> Entreprise
+        $stage->setEntreprise($e7);
+    
+        //Persister les objets modifiés
+        $manager->persist($stage);
+        $manager->persist($e7);
+   
+        /*    $nbStagesAGenerer = $faker->numberBetween($min = 0, $max = 3);
 
         for($i=0 ; $i<=4 ;$i++) {
             //création de plusieurs stage par formations
@@ -125,7 +266,7 @@ class AppFixtures extends Fixture
                 $stage->setMission($faker->realText($maxNbChars = 5000, $indexSize = 2));
                 $stage->setEmail($faker->companyEmail());
                 // Creation de la relation Stage -> Formation
-                $stage->addFormation($tabFormation[i]);
+                $stage->addFormation($tabFormation[$i]);
                 // Définir et maj l'Entreprise
                 $numEntreprise = $faker->numberBetween($min = 0, $max = 7);
 
@@ -139,7 +280,8 @@ class AppFixtures extends Fixture
                 $manager->persist($tabEntreprise[$numEntreprise]);
                 }
         }
-    /*    //---------STAGES-----------------//
+    */
+        /*    //---------STAGES-----------------//
         for ($numStage=0 ;$numStage <= 2 ; $numStage++ ) {
             $stage = new Stage();
             $stage->setTitre($faker->jobTitle());
