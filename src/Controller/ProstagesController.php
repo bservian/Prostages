@@ -18,22 +18,33 @@ class ProstagesController extends AbstractController
         //recuperer  les ressources enregistrées en BD
         $stages = $repositoryRessource->findAll();
         //Envoyer les ressources récupérées à la vue chargée de les afficher
+
         return $this->render('prostages/index.html.twig',
          ['stages' => $stages]);
     }
 
     public function entreprise(): Response
     {
-        return $this->render('prostages/entreprise.html.twig', [
-            'controller_name' => 'ProstagesController',
-        ]);
+        //recuperer le repository de l'netité Ressource
+        $repositoryRessource = $this->getDoctrine()->getRepository(Entreprise::class);
+        //recuperer  les ressources enregistrées en BD
+        $entreprises = $repositoryRessource->findAll();
+        //Envoyer les ressources récupérées à la vue chargée de les afficher
+        return $this->render('prostages/entreprise.html.twig',
+         ['entreprises' => $entreprises]);
+        
     }
 
     public function formations(): Response
     {
-        return $this->render('prostages/formations.html.twig', [
-            'controller_name' => 'ProstagesController',
-        ]);
+        //recuperer le repository de l'netité Ressource
+        $repositoryRessource = $this->getDoctrine()->getRepository(Formation::class);
+        //recuperer  les ressources enregistrées en BD
+        $formations = $repositoryRessource->findAll();
+        //Envoyer les ressources récupérées à la vue chargée de les afficher
+        return $this->render('prostages/formations.html.twig',
+         ['formations' => $formations]);
+
     }
     
     public function stage($id): Response

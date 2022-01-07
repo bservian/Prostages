@@ -255,7 +255,7 @@ class AppFixtures extends Fixture
         $manager->persist($stage);
         $manager->persist($e7);
    
-        /*    $nbStagesAGenerer = $faker->numberBetween($min = 0, $max = 3);
+        /*    $nbStagesAGenerer = $faker->numberBetween($min = 0, $max = 3); Ca marche pas
 
         for($i=0 ; $i<=4 ;$i++) {
             //création de plusieurs stage par formations
@@ -281,7 +281,7 @@ class AppFixtures extends Fixture
                 }
         }
     */
-        /*    //---------STAGES-----------------//
+        /*    //---------STAGES-----------------// Ca marche pas non plus
         for ($numStage=0 ;$numStage <= 2 ; $numStage++ ) {
             $stage = new Stage();
             $stage->setTitre($faker->jobTitle());

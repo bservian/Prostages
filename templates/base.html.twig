@@ -59,14 +59,14 @@
         {% endblock %}
 
         {% block contenu %}
-            {% block tabTete %}
+            {% block headerTab %}
             <table class="table">
             <thead>
                 <tr>
-                <th scope="col">Titre</th>
-                <th scope="col">Entreprise</th>
-                <th scope="col">Adresse</th>
-                <th scope="col">Formation</th>
+                <th scope="col"> {% block head1 %}    Titre        {% endblock %}</th>
+                <th scope="col"> {% block head2 %}    Entreprise   {% endblock %}</th>
+                <th scope="col"> {% block head3 %}    Adresse      {% endblock %}</th>
+                <th scope="col"> {% block head4 %}    Formation    {% endblock %}</th>
                 </tr>
             </thead>
             {% endblock %}
