@@ -2,20 +2,17 @@
 
 {% block title %}Hello ProstagesController!{% endblock %}
 
-{% block contenu %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
+{% block contenuTab %}
+    <tbody>
+        {% for stageCourant in stages %}
+            <tr>
+            <th scope="row">{{stageCourant.titre}}</th>
+            <td>{{stageCourant.entreprise.nom}}</td>
+            <td>{{stageCourant.entreprise.adresse}}</td>
+            <td>formation</td>
 
-<div class="example-wrapper">
-    <h1>Bienvenue sur la page d'accueil </h1>
+            </tr>
+            {% endfor %}
 
-    Stages :
-    <ul>
-        <li>me</li>
-        <li>mario</li>
-        <li>rito</li>
-    </ul>
-</div>
+    </tbody>
 {% endblock %}

@@ -59,34 +59,21 @@
         {% endblock %}
 
         {% block contenu %}
-        <!-- 4 colonnes 1 ligne -->
-        <div class="row">
-            <div class="col-md-2 col-sm-4">
-                {% block titre %}
-                    ---------TITRE--------- 
-                {% endblock %}
-            </div>
-            <div class="col-md-2 col-sm-4">
-                {% block nom %}
-                    ---------NOM---------
-                {% endblock %}
-            </div>
-            <div class="col-md-3 col-sm-4">
-                {% block activité %}
-                    ---------ACTIVITE---------
-                {% endblock %}
-            </div>
-            <div class="col-md-3 d-none d-md-block">  <!-- cacher la colonne en format small-->
-                {% block adresse %}
-                    ---------ADRESSE---------
-                {% endblock %}
-            </div>
-            <div class="col-md-2 d-none d-md-block">    <!-- cacher la colonne en format small-->
-                {% block formation %}
-                    ---------FORMATION---------
-                {% endblock %}
-            </div>
-        </div>
+            {% block tabTete %}
+            <table class="table">
+            <thead>
+                <tr>
+                <th scope="col">Titre</th>
+                <th scope="col">Entreprise</th>
+                <th scope="col">Adresse</th>
+                <th scope="col">Formation</th>
+                </tr>
+            </thead>
+            {% endblock %}
+            {% block contenuTab %}
+            {% endblock %}
+            </table>
+        
         {% endblock %}
 
         {% block footer %}
