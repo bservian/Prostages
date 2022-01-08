@@ -71,5 +71,17 @@ class ProstagesController extends AbstractController
         return $this->render('prostages/entreprise.html.twig', ['entreprise' => $entreprise , "listeStages" => $listeStages]);
     }
 
+    public function formation($id): Response
+    {
+        //recuperer le repository de l'entité Formation
+        $repositoryFormation = $this->getDoctrine()->getRepository(Formation::class);
+        //recuperer  les stages enregistrées en BD
+        $formation = $repositoryFormation->find($id);
+        
+
+
+        return $this->render('prostages/formation.html.twig', ['formation' => $formation]);
+    }
+
    
 }

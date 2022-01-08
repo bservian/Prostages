@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block contenu %}
+
+    {% block liens %}
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <br/> 
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="{{path('prostages_accueil')}}"  class="link-dark">Accueil</a></li>
+                            <li class="breadcrumb-item"><a href="{{path('prostages_formations')}}"  class="link-dark">Formations</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">{{formation.nomCourt}}</li>
+                        </ol>
+                    </nav>   
+                    <br/>
+                </div>
+            </div>
+        </div>
+    {% endblock %}
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+            
+            <ul class="list-group">
+                <li class="list-group-item"> <p class="fs-4"><at class="icon-circle">  Formation: {{ formation.nomLong }} </p>
+                </li>
+               
+            
+            </ul>
+            </div>
+        </div>
+        
+    </div>   
+
+{% endblock %}

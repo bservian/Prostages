@@ -24,7 +24,7 @@
                 {% for formationCourante in formations %}
                     <tr>
                     <!-- Lien vers la page du stage-->
-                    <th scope="row">{{formationCourante.nomLong}} </a> </th>
+                    <th scope="row"><a href="{{path('prostages_formation',{id:formationCourante.id})}}">{{formationCourante.nomLong}} </a> </th>
                     <td>{{formationCourante.nomCourt}}</td>
                     </tr>
                     {% endfor %}
