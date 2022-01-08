@@ -2,10 +2,19 @@
 
 {% block title %}Hello ProstagesController!{% endblock %}
 
+{% block liens %}
+<br/>
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+                    <li class="breadcrumb-item active" aria-current="page">Accueil</li>
+                </ol>
+            </nav> 
+{% endblock %}
 {% block contenuTab %}
     <tbody>
         {% for stageCourant in stages %}
             <tr>
+            <!-- Lien vers la page du stage-->
             <th scope="row"><a href="{{path('prostages_stage',{id:stageCourant.id})}}"> {{stageCourant.titre}} </a> </th>
             <td>{{stageCourant.entreprise.nom}}</td>
             <td>{{stageCourant.entreprise.adresse}}</td>

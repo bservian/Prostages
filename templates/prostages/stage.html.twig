@@ -1,36 +1,41 @@
 {% extends 'base.html.twig' %}
 {% block contenu %}
+    {% block liens %}
 
-<div class="container">
-	<div class="row">
-		<div class="col-md-12">
-            <br/> 
-            <nav aria-label="breadcrumb">
-                <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="{{path('prostages_accueil')}}" class="link-dark">Home</a></li>
-                    <li class="breadcrumb-item active" aria-current="page">{{stage.titre}}</li>
-                </ol>
-            </nav>   
-            <br/>
-		</div>
-	</div>
-	<div class="row">
-		<div class="col-md-12">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <br/> 
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="{{path('prostages_accueil')}}" class="link-dark">Accueil</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">{{stage.titre}}</li>
+                        </ol>
+                    </nav>   
+                    <br/>
+                </div>
+            </div>
+        </div>
+    {% endblock %}
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+            
+            <ul class="list-group">
+                <li class="list-group-item"> <p class="fs-4"><at class="icon-circle">  Stage: {{ stage.titre }} </p>
+                </li>
+                <li class="list-group-item"> <p class="fs-4"><at class="icon-address-card"> Entreprise: {{ stage.entreprise.nom }}</p></li>
+                <li class="list-group-item"> <p class="fs-4"><at class="icon-quote-left">  Mission: </p>
+                                            <p class="text-start text-break">      {{ stage.mission }} </p>
+                </li>
+                <li class="list-group-item"> <p class="fs-4"><at class="icon-mail-alt">Mail:  {{ stage.email }} </p></li>
+            
+            </ul>
+            </div>
+        </div>
         
-        <ul class="list-group">
-            <li class="list-group-item"> <p class="fs-4"><at class="icon-circle">  Stage: {{ stage.titre }} </p>
-            </li>
-            <li class="list-group-item"> <p class="fs-4"><at class="icon-address-card"> Entreprise: {{ stage.entreprise.nom }}</p></li>
-            <li class="list-group-item"> <p class="fs-4"><at class="icon-quote-left">  Mission: </p>
-                                         <p class="text-start text-break">      {{ stage.mission }} </p>
-            </li>
-            <li class="list-group-item"> <p class="fs-4"><at class="icon-mail-alt">Mail:  {{ stage.email }} </p></li>
-        
-        </ul>
-		</div>
     </div>
-	
-</div>
 
 
 {% endblock %}

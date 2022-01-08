@@ -3,12 +3,20 @@
 <h3><center>Cette page affichera la liste des entreprises proposant un stage <center></h3>
 {% endblock %}
 
+{% block liens %}
+<br/>
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="{{path('prostages_accueil')}}"  class="link-dark">Accueil</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Entreprises</li>
+                </ol>
+            </nav> 
+{% endblock %}
 
-
-        {% block head1 %}    Entreprise      {% endblock %}
-        {% block head2 %}    Adresse         {% endblock %}
-        {% block head3 %}    Activité        {% endblock %}
-        {% block head4 %}    siteWeb         {% endblock %}
+{% block head1 %}    Entreprise      {% endblock %}
+{% block head2 %}    Adresse         {% endblock %}
+{% block head3 %}    Activité        {% endblock %}
+{% block head4 %}    siteWeb         {% endblock %}
 
   
 
@@ -16,7 +24,7 @@
     <tbody>
         {% for entrepriseCourante in entreprises %}
             <tr>
-            <th scope="row">{{entrepriseCourante.nom}}</th>
+            <th scope="row"><a href="{{path('prostages_entreprise',{id:entrepriseCourante.id})}}">{{entrepriseCourante.nom}}</a></th>
             <td>{{entrepriseCourante.adresse}}</td>
             <td>{{entrepriseCourante.activite}}</td>
             <td>{{entrepriseCourante.siteWeb}}</td>
