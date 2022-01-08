@@ -27,7 +27,9 @@
             <ul class="list-group">
                 <li class="list-group-item"> <p class="fs-4"><at class="icon-circle">  Formation: {{ formation.nomLong }} </p>
                 </li>
-               
+                 {% for stage in formation.stages %}
+                    <li class="list-group-item"><a href="{{path('prostages_stage',{id:stage.id})}}">{{ stage.titre }} </a></li> 
+                {% endfor %}  
             
             </ul>
             </div>

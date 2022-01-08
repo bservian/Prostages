@@ -18,10 +18,15 @@
             <th scope="row"><a href="{{path('prostages_stage',{id:stageCourant.id})}}"> {{stageCourant.titre}} </a> </th>
             <td>{{stageCourant.entreprise.nom}}</td>
             <td>{{stageCourant.entreprise.adresse}}</td>
-            <td>formation</td>
+             {% for formation in stageCourant.formations %}
+                    <td>{{formation.nomCourt}}</td> 
+            {% endfor %} 
 
             </tr>
             {% endfor %}
 
     </tbody>
 {% endblock %}
+
+
+               
