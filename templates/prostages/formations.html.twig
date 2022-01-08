@@ -1,13 +1,39 @@
 {% extends 'base.html.twig' %}
-{% block section %}
-<h3><center>Cette page affichera la liste des formations de l'IUT<center></h3>
-{% endblock %}
+
+{% block contenu %}
+
+    {% block liens %}
+    <br/>
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="{{path('prostages_accueil')}}"  class="link-dark">Accueil</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Formations</li>
+                    </ol>
+                </nav> 
+    {% endblock %}
+
+    <table class="table">
+        <thead>
+            <tr>
+            <th scope="col"> {% block head1 %}  Formation  {% endblock %}</th>
+            <th scope="col"> {% block head2 %}  Code  {% endblock %}</th>
+            </tr>
+        </thead>
+
+        <tbody>
+                {% for formationCourante in formations %}
+                    <tr>
+                    <!-- Lien vers la page du stage-->
+                    <th scope="row">{{formationCourante.nomLong}} </a> </th>
+                    <td>{{formationCourante.nomCourt}}</td>
+                    </tr>
+                    {% endfor %}
+
+        </tbody>
 
 
-    {% block head1 %}    Formation       {% endblock %}
-    {% block head2 %}    Stage           {% endblock %}
-    {% block head3 %}    Entreprise        {% endblock %}
-    {% block head4 %}    Adresse         {% endblock %}
-
+    </table>
   
+{% endblock %}
+ 
 

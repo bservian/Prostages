@@ -62,23 +62,24 @@
             {% block liens %}
             {% endblock %}
 
-            {% block headerTab %}
-            <table class="table">
-            <thead>
-                <tr>
-                <th scope="col"> {% block head1 %}    Titre        {% endblock %}</th>
-                <th scope="col"> {% block head2 %}    Entreprise   {% endblock %}</th>
-                <th scope="col"> {% block head3 %}    Adresse      {% endblock %}</th>
-                <th scope="col"> {% block head4 %}    Formation    {% endblock %}</th>
-                </tr>
-            </thead>
-            {% endblock %}
-            {% block contenuTab %}
-            {% endblock %}
-            </table>
-        
+            
+                {% block headerTab %}
+                <table class="table">
+                <thead>
+                    <tr>
+                    <th scope="col"> {% block head1 %}    Titre        {% endblock %}</th>
+                    <th scope="col"> {% block head2 %}    Entreprise   {% endblock %}</th>
+                    <th scope="col"> {% block head3 %}    Adresse      {% endblock %}</th>
+                    <th scope="col"> {% block head4 %}    Formation    {% endblock %}</th>
+                    </tr>
+                </thead>
+                {% endblock %}
+                {% block contenuTab %}
+                {% endblock %}
+                </table>
+            
+            
         {% endblock %}
-
         {% block footer %}
         <div class="row">
             <div class="col-md-6 col-sm-6 offset-3">
