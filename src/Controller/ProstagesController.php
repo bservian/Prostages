@@ -23,14 +23,14 @@ class ProstagesController extends AbstractController
          ['stages' => $stages]);
     }
 
-    public function entreprise(): Response
+    public function entreprises(): Response
     {
         //recuperer le repository de l'netité Ressource
         $repositoryRessource = $this->getDoctrine()->getRepository(Entreprise::class);
         //recuperer  les ressources enregistrées en BD
         $entreprises = $repositoryRessource->findAll();
         //Envoyer les ressources récupérées à la vue chargée de les afficher
-        return $this->render('prostages/entreprise.html.twig',
+        return $this->render('prostages/entreprises.html.twig',
          ['entreprises' => $entreprises]);
         
     }
@@ -49,8 +49,14 @@ class ProstagesController extends AbstractController
     
     public function stage($id): Response
     {
-        return $this->render('prostages/stage.html.twig', [
-            'controller_name' => $id,
-        ]);
+        //recuperer le repository de l'netité Ressource
+        $repositoryRessource = $this->getDoctrine()->getRepository(Stage::class);
+        //recuperer  les ressources enregistrées en BD
+        $stage = $repositoryRessource->find($id);
+
+
+        return $this->render('prostages/stage.html.twig', ['stage' => $stage]);
     }
+
+   
 }

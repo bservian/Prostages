@@ -6,7 +6,7 @@
     <tbody>
         {% for stageCourant in stages %}
             <tr>
-            <th scope="row">{{stageCourant.titre}}</th>
+            <th scope="row"><a href="{{path('prostages_stage',{id:stageCourant.id})}}"> {{stageCourant.titre}} </a> </th>
             <td>{{stageCourant.entreprise.nom}}</td>
             <td>{{stageCourant.entreprise.adresse}}</td>
             <td>formation</td>
